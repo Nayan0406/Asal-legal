@@ -720,8 +720,8 @@ nav .nav-links li a:hover {
   color: #aaa;
   font-size: 2rem;
   font-weight: bold;
-  position: absolute;
-  
+  position: relative;
+
   /* top: 192px;
   right: 174px; */
   /* top: 10px;

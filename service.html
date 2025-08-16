@@ -38,6 +38,173 @@
           padding: 0 1px;
         }
       }
+      
+      /* Why Choose Us Section Styles */
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 20px;
+      }
+      
+      .container > p {
+        padding-bottom: 40px;
+        font-size: 1.1rem;
+        line-height: 1.6;
+        text-align: center;
+        color: #333;
+        margin-bottom: 0;
+      }
+      
+      .content {
+        display: flex;
+        gap: 40px;
+        align-items: flex-start;
+      }
+      
+      .images {
+        flex: 0 0 350px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      
+      .images img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  margin-top: 30px;
+      }
+      
+      .text {
+        flex: 1;
+        font-size: 1.1rem;
+        line-height: 1.6;
+        text-align: left;
+      }
+      
+      @media (max-width: 991px) {
+        .container {
+          padding: 30px 15px;
+        }
+        
+        .container > p {
+          padding-bottom: 30px;
+          font-size: 1rem;
+        }
+        
+        .content {
+          flex-direction: column;
+          gap: 30px;
+          align-items: center;
+        }
+        
+        .images {
+          flex: none;
+          width: 100%;
+          max-width: 500px;
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+        
+        .images img {
+          width: 45%;
+          height: 200px;
+          margin-top: 25px;
+        }
+        
+        .text {
+          text-align: center;
+          font-size: 1rem;
+        }
+      }
+      
+      @media (max-width: 768px) {
+        .container {
+          padding: 20px 10px;
+        }
+        
+        .container > p {
+          padding-bottom: 25px;
+          font-size: 0.95rem;
+        }
+        
+        .content {
+          gap: 25px;
+        }
+        
+        .images {
+          max-width: 400px;
+        }
+        
+        .images img {
+          width: 100%;
+          height: 180px;
+          margin-top: 20px;
+        }
+        
+        .text {
+          font-size: 0.95rem;
+          line-height: 1.5;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        .container {
+          padding: 15px 8px;
+        }
+        
+        .container > p {
+          padding-bottom: 20px;
+          font-size: 0.9rem;
+        }
+        
+        .content {
+          gap: 20px;
+        }
+        
+          .images {
+            max-width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4%;
+            justify-content: center;
+          }
+          .images img {
+            width: 48%;
+            height: 160px;
+            margin-top: 15px;
+          }
+        
+        .text {
+          font-size: 0.9rem;
+          line-height: 1.4;
+          padding: 0 10px;
+        }
+      }
+      
+      @media (max-width: 375px) {
+        .container {
+          padding: 10px 5px;
+        }
+        
+        .container > p {
+          padding-bottom: 15px;
+          font-size: 0.85rem;
+        }
+        
+        .images img {
+          height: 140px;
+          margin-top: 10px;
+        }
+        
+        .text {
+          font-size: 0.85rem;
+          padding: 0 5px;
+        }
+      }
     </style>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     
@@ -193,18 +360,22 @@
             </div>
         </div>
         <h1 class="why-choose-us">WHY CHOOSE US</h1>
+        <p>At Asal Legal Solution LLP, we are more than just a law firm, we are your trusted partners in navigating the complexities of the legal landscape. With a legacy of excellence since our founding in 2011, we combine deep expertise, innovative strategies, and a client-first philosophy to deliver unparalleled legal solutions. Here’s why clients choose us:</p>
         <div class="content">
             <div class="images">
                 <img src="images/blog4.jpg" alt="Image 2">
                 <img src="images/blog1.jpg" alt="Image 3">
+                <img src="images/img-1.jpg" alt="">
+                <img src="images/img-4.jpg" alt="">
             </div>
             <div class="text">
-                <p><br><b>Certified Expertise:</b> Four seasoned Advocates on Record ensure a seamless understanding of Supreme Court procedures.<br>
-                  <br><b>Extensive Experience:</b> Proven success in landmark judgments and high-stakes litigation, successfully represented clients in landmark cases across constitutional, corporate, and criminal domains.<br>
-                  <br><b>Judicial Acumen:</b> Mastery in constitutional jurisprudence and evolving legal doctrines.<br>
-                  <br><b>Representation:</b> Solutions tailored to the intricacies of each case.<br>
-                  <br><b>Collaborative Approach:</b> Effective partnerships with Senior Advocates and domain experts for maximized client outcomes.<br>
-                  <br><b>Depth in PMLA Matters:</b> Expertise in combating allegations of money laundering, securing favorable outcomes in critical financial cases.<br>
+                <p><br><b>Unmatched Expertise Across Diverse Legal Domains:</b> Our team, led by Advocate Akash Kakade, comprises seasoned advocates, including multiple Advocates-on-Record at the Supreme Court of India. With specialisations in Constitutional Law, Corporate Law, Criminal Law, White Collar Crime, Intellectual Property, and more, we have successfully argued over 10,000 cases combined together, including landmark Constitution Bench Judgments that have shaped Indian jurisprudence. Our global perspective, enriched by international education and mentorship under legal luminaries like Ram Jethmalani and Fali S. Nariman, ensures cutting-edge solutions for complex legal challenges.<br>
+                  <br><b>Client-Centric Approach:</b> We believe every client deserves personalised attention. Whether you’re a multinational corporation, a startup, or an individual, we tailor our strategies to your unique needs, ensuring proactive risk management and robust representation. Our commitment to transparency, accessibility, and timely communication builds lasting relationships grounded in trust.<br>
+                  <br><b>Proven Track Record of Success:</b> With over a decade of experience, we have a history of securing favourable outcomes in high-stakes litigation and advisory matters. From the Supreme Court to High Courts and specialised tribunals like PMLA and NCLAT, our partners have delivered results in thousands of cases, contributing to reported judgments that advance Indian law. Our expertise spans corporate transactions, dispute resolution, and public interest matters, making us a go-to firm for diverse legal needs.<br>
+                  <br><b>Innovative and Research-Driven Advocacy:</b> Our team’s research-oriented approach sets us apart. We leverage in-depth legal analysis, global insights, and strategic thinking to craft innovative solutions that anticipate challenges and seize opportunities. Our workshops on intellectual property and affiliations with organisations like the Maratha Seva Sangh reflect our commitment to legal education and community impact.<br>
+                  <br><b>Collaborative Approach:</b> Our team’s research-oriented approach sets us apart. We leverage in-depth legal analysis, global insights, and strategic thinking to craft innovative solutions that anticipate challenges and seize opportunities. Our workshops on intellectual property and affiliations with organisations like the Maratha Seva Sangh reflect our commitment to legal education and community impact.<br>
+                  <br><b>Comprehensive Legal Solutions:</b> From advisory services to high-stakes litigation, we offer end-to-end legal support. Our practice areas include corporate compliance, intellectual property protection, international trade law, taxation, and alternative dispute resolution, ensuring holistic solutions under one roof. Whether it’s drafting agreements or arguing before the Supreme Court, we deliver excellence at every step.<br>
+                  <br><b>Ethical Advocacy and Social Responsibility:</b> Rooted in integrity, we uphold the highest ethical standards in all our work. Our dedication to justice extends beyond the courtroom, with initiatives supporting legal education and social causes. By choosing us, you partner with a firm that values impact and accountability.<br>
                   </p>
             </div>
         </div>

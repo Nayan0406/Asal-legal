@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Member Details</title>
+    <link rel="stylesheet" href="styles/team-member.css">
+    <link rel="icon" type="image/png" href="images/logo.png" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <!-- <nav class="navbar">
+        <div class="logo">
+            <img src="images/WhatsApp_Image_2024-12-10_at_7.19.12_PM-removebg-preview 1 (1).png" alt="Logo">
+        </div>
+        <input type="checkbox" id="menu-checkbox" class="menu-checkbox">
+        <label for="menu-checkbox" class="menu-icon">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </label>
+        <ul class="nav-links">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="aboutus.html">ABOUT US</a></li>
+            <li><a href="service.html">SERVICES</a></li>
+            <li><a href="ourteam.html">OUR TEAM</a></li>
+            <li><a href="blog.html">BLOG</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>       
+    </nav> -->
+
+    <!-- Loading Section -->
+    <div id="loadingSection" class="loading-container">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">Loading team member details...</div>
+    </div>
+
+    <!-- Team Member Details -->
+    <div id="memberContent" class="member-details-container">
+        <div class="back-to-team" style="position: absolute; top: 30px; left: 30px; z-index: 10;">
+            <button onclick="goBackToTeam()" class="back-btn">
+                <i class="fas fa-arrow-left"></i>
+                Back to Our Team
+            </button>
+        </div>
+        <div class="member-hero">
+            <div class="member-image-container">
+                <img id="memberImage" src="" alt="Team Member" class="member-image">
+            </div>
+            <div class="member-info">
+                <h1 id="memberName" class="member-name"></h1>
+                <h2 id="memberPosition" class="member-position"></h2>
+                <p id="memberBio" class="member-bio"></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Team member data
+        const teamMembers = {
+            'akash-kakade': {
+                name: 'Akash Kakade',
+                position: 'Senior Advocate',
+                image: 'images/lawer-8.jpg',
+                bio: 'Advocate Akash Kakade is a practicing lawyer at the Supreme Court of India and a Managing Partner at Asal Legal Solution LLP, Connaught Place, New Delhi establishing the firm in 2011. He is enrolled with the Bar Council of India and also with Bar Council of Maharashtra and Goa and has built a versatile practice spanning Constitutional Law, Corporate Law, Criminal Law, Land Acquisition, Human Rights Law, and Alternative Dispute Resolution (ADR). he has completed his masters in Commercial and Corporate Law from Queen Mary, University of London. Over the years, he has represented clients before the Supreme Court, High Courts across the country, and various tribunals. Known for his research-oriented approach and persuasive advocacy, he has been part of several important matters contributing to constitutional, criminal and corporate jurisprudence.'
+            },
+            'somanath-padhan': {
+                name: 'Somanath Padhan',
+                position: 'Senior Advocate',
+                image: 'images/lawer-3.jpg',
+                bio: 'Somanath Padhan- Advocate-on-Record Supreme Court of India is a seasoned legal professional practicing before the Supreme Court of India. Born on 27th April 1978 in Kuatsingha, Odisha, he completed his schooling in Odisha and went on to graduate from Jawaharlal Nehru University (JNU), New Delhi. He pursued his LL.B. from Campus Law Centre, University of Delhi, as part of the 2007 batch. He began his career under Ms. Hemantika Wahi, Standing Counsel for the State of Gujarat, where he served as panel counsel from 2007 to 2009. Subsequently, he was a Partner at DesaiLegal from 2009 to 2015 before establishing his independent practice and joining Hands in growing of Asal Legal Solution LLP. In 2016, he cleared the rigorous Advocate-on-Record examination of the Supreme Court of India. Over the course of his career, he has filed and argued more than five thousand cases, contributing to multiple reported judgments that have enriched Indian jurisprudence.'
+            },
+            'ashok-anand': {
+                name: 'Ashok Anand',
+                position: 'Senior Advocate',
+                image: 'images/lawer-10.jpg',
+                bio: 'Advocate-on-Record Ashok Anand is a practicing lawyer at the Supreme Court of India with extensive experience in litigation across constitutional, civil, and criminal matters. He is enrolled with the Bar Council of Delhi and has successfully cleared the Advocate-on-Record examination of the Supreme Court of India. Over the years, he has represented clients in complex disputes before the Supreme Court, High Courts, and various tribunals, and has been involved in several landmark matters shaping Indian jurisprudence.'
+            },
+            'rakesh-kumar-singh': {
+                name: 'Rakesh Kumar Singh',
+                position: 'Senior Advocate',
+                image: 'images/lawer-7.jpg',
+                bio: 'Advocate-on-Record Rakesh Kumar Singh is a practicing lawyer at the Supreme Court of India with rich experience in constitutional, corporate, civil, and criminal litigation. Having COmpleted his Mastersx from prestigious NSLIU, Bengaluru, Enrolled with the Bar Council of Delhi, he successfully cleared the Advocate-on-Record examination of the Supreme Court of India and has since represented a wide range of clients before the Supreme Court, High Courts, and various tribunals. Known for his sharp legal acumen and strategic approach, he has been part of several significant matters contributing to the development of Indian law. He has been inducted as partner at Asal Legal Solution LLP in 2020.'
+            },
+            'swetab-kumar': {
+                name: 'Swetab Kumar',
+                position: 'Senior Advocate',
+                image: 'images/lawer-11.jpg',
+                bio: 'Advocate Swetab Kumar is a practicing lawyer at the Supreme Court of India with expertise in constitutional law, civil and criminal litigation, and corporate disputes. Enrolled with the Bar Council of Delhi, he has represented clients before the Supreme Court, various High Courts, and specialized tribunals. With a strong focus on research-based advocacy and strategic litigation, he has been involved in diverse cases cutting across multiple areas of law.'
+            },
+            'satya-kam-sharma': {
+                name: 'Satya Kam Sharma',
+                position: 'Senior Advocate',
+                image: 'images/image3.jpg',
+                bio: 'Satya Kam Sharma brings decades of experience in appellate practice and constitutional law. His scholarly approach and exceptional legal acumen have earned him recognition among peers and clients alike.'
+            }
+        };
+
+        // Loading functions
+        function showLoading() {
+            document.getElementById("loadingSection").style.display = "flex";
+            document.getElementById("memberContent").style.display = "none";
+        }
+
+        function hideLoading() {
+            document.getElementById("loadingSection").style.display = "none";
+            document.getElementById("memberContent").style.display = "block";
+        }
+
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        function goBackToTeam() {
+            window.location.href = "ourteam.html";
+        }
+
+        // Initialize page
+        function initializePage() {
+            showLoading();
+            
+            const memberId = getQueryParam("member");
+            
+            if (memberId && teamMembers[memberId]) {
+                const member = teamMembers[memberId];
+                
+                // Update page content
+                document.getElementById("memberName").textContent = member.name;
+                document.getElementById("memberPosition").textContent = member.position;
+                document.getElementById("memberImage").src = member.image;
+                document.getElementById("memberImage").alt = member.name;
+                document.getElementById("memberBio").textContent = member.bio;
+                
+                // Update page title
+                document.title = `${member.name} - Team Member Details`;
+                
+                hideLoading();
+            } else {
+                hideLoading();
+                document.getElementById("memberName").textContent = "Team Member Not Found";
+                document.getElementById("memberPosition").textContent = "";
+                document.getElementById("memberImage").style.display = "none";
+                document.getElementById("memberBio").textContent = "Sorry, the requested team member could not be found.";
+            }
+        }
+
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', initializePage);
+    </script>
+</body>
+</html>

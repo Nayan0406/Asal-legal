@@ -31,25 +31,40 @@ const database = getDatabase(app);
 
 // Function to Handle "Get in Touch" Form Submission
 function setupContactForm() {
-  const getForm = document.getElementById("getForm");
-  if (!getForm) return;
+  const contactForm = document.getElementById("contactForm");
+  if (!contactForm) return;
 
-  getForm.addEventListener("submit", (e) => {
+  contactForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    const fullName = document.getElementById("fullName").value;
+    const firstName = document.getElementById("firstName").value;
+    const lastName = document.getElementById("lastName").value;
     const email = document.getElementById("email").value;
+    const phone = document.getElementById("phone").value;
     const message = document.getElementById("message").value;
+    
+    // Get selected subject
+    let subject = "";
+    const subjectOptions = document.querySelectorAll('input[name="subject"]');
+    for (const option of subjectOptions) {
+      if (option.checked) {
+        subject = option.value;
+        break;
+      }
+    }
 
     // Push data to Firebase Realtime Database
-    push(ref(database, "getintouch"), {
-      fullName,
+    push(ref(database, "contacts"), {
+      firstName,
+      lastName,
       email,
+      phone,
+      subject,
       message
     })
       .then(() => {
         alert("Your message has been sent!");
-        getForm.reset(); // Reset the form after successful submission
+        contactForm.reset(); // Reset the form after successful submission
       })
       .catch((error) => {
         alert("Error sending message: " + error.message);
@@ -468,38 +483,6 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         });
       });
-
-      // Contact form functionality (from contact.html)
-      const contactForm = document.getElementById("contactForm");
-      if (contactForm) {
-        contactForm.addEventListener("submit", (e) => {
-          e.preventDefault();
-          const firstName = document.getElementById("firstName").value;
-          const lastName = document.getElementById("lastName").value;
-          const email = document.getElementById("email").value;
-          const phone = document.getElementById("phone").value;
-          const message = document.getElementById("message").value;
-          let subject = "";
-          const subjectOptions = document.querySelectorAll('input[name="subject"]');
-          for (const option of subjectOptions) {
-            if (option.checked) {
-              subject = option.value;
-              break;
-            }
-          }
-          // Push to Firebase (same config as above)
-          push(ref(database, "contacts"), {
-            firstName,
-            lastName,
-            email,
-            phone,
-            subject,
-            message
-          });
-          alert("Your message has been sent!");
-          contactForm.reset();
-        });
-      }
     });
   </script>
   

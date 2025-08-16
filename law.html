@@ -16,73 +16,252 @@
     padding: 0;
     text-align: center;
     background-color:#86a3c0;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.back-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    display: inline-block;
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 16px;
+    color: white;
+    background: #2A5883;
+    border-radius: 5px;
+    z-index: 1000;
+    transition: background 0.3s ease;
+}
+
+.back-button:hover {
+    background: #1e3f5a;
+    text-decoration: none;
 }
 
 .card, .law-card {
     background:#3b6084;
-    padding: 20px;
-    margin: 50px auto;
-    width: 700px;
-    height: 500px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin: 80px auto 50px;
+    width: 90%;
+    max-width: 800px;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
     text-align: center;
+    box-sizing: border-box;
 }
 
 .card-icon, .law-icon {
-    font-size: 50px;
+    font-size: 60px;
     color:white;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    display: block;
 }
 
 .card h2, .law-card h2 {
-    font-size: 22px;
+    font-size: 2.2rem;
     color: white;
+    margin-bottom: 20px;
+    font-weight: bold;
 }
 
 .card p, .law-card p {
-    font-size: 16px;
+    font-size: 1.1rem;
     color: white;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    text-align: left;
 }
 
 .card-button {
     display: inline-block;
-    padding: 10px 15px;
-    margin-top: 10px;
+    padding: 12px 20px;
+    margin-top: 15px;
     background: #2A5883;
     color: white;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+}
+
+.card-button:hover {
+    background: #1e3f5a;
 }
 
 .law-card ul {
     text-align: left;
-    margin: 20px;
+    margin: 20px 0;
     padding: 0;
 }
 
 .law-card ul li {
     list-style: none;
-    font-size: 16px;
+    font-size: 1.1rem;
     color:white;
-    padding: 5px;
+    padding: 8px 0;
+    line-height: 1.5;
 }
 
-.back-button {
-    display: inline-block;
-    margin: 20px;
-    text-decoration: none;
-    font-size: 16px;
-    color: white;
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+    .law-card {
+        width: 92%;
+        margin: 70px auto 40px;
+        padding: 25px;
+    }
+    
+    .law-card h2 {
+        font-size: 2rem;
+    }
+    
+    .law-card p {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+    
+    .law-icon {
+        font-size: 50px;
+    }
 }
 
-.back-button:hover {
-    text-decoration: underline;
+@media screen and (max-width: 1024px) {
+    .law-card {
+        width: 95%;
+        margin: 70px auto 40px;
+        padding: 25px;
+    }
+    
+    .law-card h2 {
+        font-size: 1.9rem;
+    }
+    
+    .law-card p {
+        font-size: 0.98rem;
+    }
+    
+    .law-icon {
+        font-size: 48px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .back-button {
+        top: 15px;
+        left: 15px;
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+    
+    .law-card {
+        width: 95%;
+        margin: 60px auto 30px;
+        padding: 20px;
+        border-radius: 12px;
+    }
+    
+    .law-card h2 {
+        font-size: 1.7rem;
+        margin-bottom: 15px;
+    }
+    
+    .law-card p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+        margin-bottom: 12px;
+        text-align: left;
+    }
+    
+    .law-icon {
+        font-size: 42px;
+        margin-bottom: 15px;
+    }
+    
+    .law-card ul li {
+        font-size: 0.9rem;
+        padding: 6px 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .back-button {
+        top: 10px;
+        left: 10px;
+        padding: 6px 10px;
+        font-size: 13px;
+    }
+    
+    .law-card {
+        width: 96%;
+        margin: 50px auto 20px;
+        padding: 15px;
+        border-radius: 10px;
+    }
+    
+    .law-card h2 {
+        font-size: 1.4rem;
+        margin-bottom: 12px;
+    }
+    
+    .law-card p {
+        font-size: 0.85rem;
+        line-height: 1.4;
+        margin-bottom: 10px;
+        text-align: justify;
+    }
+    
+    .law-icon {
+        font-size: 36px;
+        margin-bottom: 12px;
+    }
+    
+    .law-card ul li {
+        font-size: 0.85rem;
+        padding: 5px 0;
+        line-height: 1.4;
+    }
+    
+    .card-button {
+        padding: 8px 12px;
+        font-size: 0.85rem;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .back-button {
+        top: 8px;
+        left: 8px;
+        padding: 5px 8px;
+        font-size: 12px;
+    }
+    
+    .law-card {
+        width: 98%;
+        margin: 45px auto 15px;
+        padding: 12px;
+    }
+    
+    .law-card h2 {
+        font-size: 1.2rem;
+    }
+    
+    .law-card p {
+        font-size: 0.8rem;
+        line-height: 1.3;
+    }
+    
+    .law-icon {
+        font-size: 32px;
+    }
+    
+    .law-card ul li {
+        font-size: 0.8rem;
+        line-height: 1.3;
+    }
 }
 </style>
 <body>
-
-
+    <a href="index.html" class="back-button">← Back to Home</a>
 
     <main>
         <div class="law-card">
@@ -99,8 +278,7 @@ Education law is a legal framework that governs educational institutions, ensuri
 
 Beyond student protections, education law also addresses curriculum standards, teacher rights, and institutional policies. It ensures fair employment practices, maintains academic integrity, and enforces accountability in both public and private institutions. With the rise of online education, legal provisions now cover digital learning, data security, and intellectual property rights. Overall, education law plays a crucial role in shaping a just, inclusive, and high-quality education system worldwide.<br>With the rise of digital learning, education law now covers e-learning regulations, cybersecurity, and intellectual property rights. It plays a crucial role in maintaining high educational standards, ensuring schools and universities operate transparently while fostering a just and equitable learning environment
             </p>
+        </div>
     </main>
-
-    <a href="index.html" class="back-button">← Back to Home</a> 
 </body>
 </html>

@@ -136,7 +136,7 @@ header .overlay {
 
 header .background {
   position: absolute;
-  top: 100px;
+  top: 90px;
   left: 0;
   right: 0;
   width: 100%;
@@ -187,7 +187,7 @@ nav {
 }
 nav .logo img {
   width: auto;
-  height: 80px;
+  height: 70px;
   position: relative;
   margin-left: 90%;  
 }

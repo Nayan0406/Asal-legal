@@ -560,8 +560,8 @@ nav .nav-links li a:hover {
   }
 
   nav .logo img {
-    height: 50px;
-    margin-left: 5%;
+    height: 70px;
+    margin-left: 80%;
   }
 }
 
@@ -592,6 +592,7 @@ nav .nav-links li a:hover {
   /* Navbar responsiveness */
   nav .logo img {
     height: 45px;
+    margin-left: 80%;
   }
   
   nav .nav-links li a {

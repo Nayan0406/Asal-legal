@@ -455,7 +455,7 @@ nav .nav-links li a:hover {
   
     nav .logo img {
       height: 50px;
-      margin-left: 5%;
+      margin-left: 80%;
     }
   }
 
@@ -471,24 +471,30 @@ nav .nav-links li a:hover {
   
   .overlay-title {
     font-size: 1.6rem;
-    margin-bottom: -8.5rem;
+    padding-bottom: -8.5rem;
+  }
+  h1.overlay-title {
+    font-size: 1.6rem;
+    margin-top: 20px;
+    padding-bottom: -8.5rem;
   }
   
   .overlay-quote {
     font-size: 0.85rem;
     max-width: 98vw;
-    margin-top: -8.5rem;
+    /* margin-top: -2.5rem; */
   }
   
   .overlay-divider {
     width: 50px;
-    margin: 0.8rem 0;
+    margin: 2.5rem 0;
     margin-bottom: -1.5rem;
   }
   
   /* Navbar responsiveness */
   nav .logo img {
     height: 45px;
+    margin-left: 80%;
   }
   
   nav .nav-links li a {

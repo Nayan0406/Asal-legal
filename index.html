@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <li><a href="index.html">HOME</a></li>
             <li><a href="aboutus.html">ABOUT US</a></li>
             <li><a href="service.html">SERVICES</a></li>
-            <!-- <li><a href="attorneys.html">ATTORNEYS</a></li> -->
+            <li><a href="ourteam.html">OUR TEAM</a></li>
             <li><a href="blog.html">BLOG</a></li>
             <li><a href="contact.html">CONTACT</a></li>
           </ul>       
@@ -145,12 +145,12 @@ document.addEventListener('DOMContentLoaded', () => {
     <section class="about-section">
       <div class="image-gallery">
           <div class="left-columns">
-              <img src="images/vertical.png" alt="Team Image 1" class="team1-image">
-              <img src="images/horizon.png" alt="Horizontal Image" class="horizontal-image">
+              <img src="images/lawer-2.jpg" alt="Team Image 1" class="team1-image">
+              <img src="images/group-img.jpg" alt="Horizontal Image" class="horizontal-image">
           </div>
           <div class="right-columns">
               <img src="images/Screenshot 2025-01-20 150433.png" alt="Success Rate" class="stat-image">
-              <img src="images/vertical.png" alt="Team Image 2" class="team2-image">
+              <img src="images/lawer-2.jpg" alt="Team Image 2" class="team2-image">
           </div>
       </div>
 
@@ -310,12 +310,55 @@ document.addEventListener('DOMContentLoaded', () => {
           </ul>
         </div>
         <div class="contact-form">
-          <form id="getForm">
-            <input id="fullName"  type="text" placeholder="Enter Your Name*" required />
-            <input id="email" type="email" placeholder="Enter Your E-mail*" required />
-            <textarea id="message"   placeholder="Type Your Message*" required></textarea>
-            <button type="submit">Send Message</button>
-          </form>
+      <form id="contactForm">
+      <div class="form-grid">
+        <div class="form-group">
+          <label class="form-label">First Name</label>
+          <input type="text" id="firstName" placeholder="First Name" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Last Name</label>
+          <input type="text" id="lastName" placeholder="Last Name" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email</label>
+          <input type="email" id="email" placeholder="Email" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Phone Number</label>
+          <input type="tel" id="phone" placeholder="+91 1197387924" required>
+        </div>
+      </div>
+
+      <div class="subject-label">Select Subject?</div>
+      <div class="subject-options">
+        <div class="subject-option">
+          <input type="radio" name="subject" id="general1" value="Constitutional Law">
+          <label for="general1">Constitutional Law</label>
+        </div>
+        <div class="subject-option">
+          <input type="radio" name="subject" id="general2" value="Corporate Law">
+          <label for="general2">Corporate Law</label>
+        </div>
+        <div class="subject-option">
+          <input type="radio" name="subject" id="general3" value="Land Acquisition">
+          <label for="general3">Land Acquisition</label>
+        </div>
+        <div class="subject-option">
+          <input type="radio" name="subject" id="general4" value="Criminal Law">
+          <label for="general4">Criminal Law</label>
+        </div>
+      </div>
+      <br>
+      <br>
+
+      <div class="form-group">
+        <label class="form-label">Message</label>
+        <textarea id="message" placeholder="Write your message here" required></textarea>
+      </div>
+
+      <button class="send-btn" type="submit">Send Message</button>
+    </form>
       </div>
     </section>
     
@@ -417,7 +460,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add JavaScript functionality for clickable blog items
     document.addEventListener("DOMContentLoaded", () => {
       const blogItems = document.querySelectorAll(".blog-item");
-
       blogItems.forEach((item) => {
         item.addEventListener("click", () => {
           const url = item.getAttribute("data-url");
@@ -426,6 +468,38 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         });
       });
+
+      // Contact form functionality (from contact.html)
+      const contactForm = document.getElementById("contactForm");
+      if (contactForm) {
+        contactForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const firstName = document.getElementById("firstName").value;
+          const lastName = document.getElementById("lastName").value;
+          const email = document.getElementById("email").value;
+          const phone = document.getElementById("phone").value;
+          const message = document.getElementById("message").value;
+          let subject = "";
+          const subjectOptions = document.querySelectorAll('input[name="subject"]');
+          for (const option of subjectOptions) {
+            if (option.checked) {
+              subject = option.value;
+              break;
+            }
+          }
+          // Push to Firebase (same config as above)
+          push(ref(database, "contacts"), {
+            firstName,
+            lastName,
+            email,
+            phone,
+            subject,
+            message
+          });
+          alert("Your message has been sent!");
+          contactForm.reset();
+        });
+      }
     });
   </script>
   

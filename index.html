@@ -490,6 +490,272 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   </script>
+
+  <!-- Disclaimer Popup -->
+  <div id="disclaimerPopup" class="disclaimer-popup">
+    <div class="disclaimer-content">
+      <div class="disclaimer-header">
+        <h2>Legal Disclaimer</h2>
+        <span class="disclaimer-close" id="disclaimerClose">&times;</span>
+      </div>
+      <div class="disclaimer-body">
+        <p><strong>Important Notice:</strong></p>
+        <p>The information provided on this website is for general informational purposes only and does not constitute legal advice. The content on this site should not be relied upon as a substitute for professional legal consultation.</p>
+        
+        <p><strong>No Attorney-Client Relationship:</strong></p>
+        <p>Accessing this website or contacting us through this site does not create an attorney-client relationship. Such a relationship is established only through a signed engagement letter.</p>
+        
+        <p><strong>Confidentiality:</strong></p>
+        <p>Please do not send confidential information through this website or email until an attorney-client relationship has been established.</p>
+        
+        <p><strong>Jurisdiction:</strong></p>
+        <p>This website is intended for users in India. Laws and regulations may vary by jurisdiction, and the information provided may not be applicable to your specific situation.</p>
+        
+        <p><strong>No Guarantee:</strong></p>
+        <p>Past results do not guarantee future outcomes. Every legal matter is unique and must be evaluated on its individual merits.</p>
+        
+        <p>By continuing to use this website, you acknowledge that you have read, understood, and agree to these terms.</p>
+      </div>
+      <div class="disclaimer-footer">
+        <button id="disclaimerAccept" class="disclaimer-btn accept">I Accept</button>
+        <button id="disclaimerDecline" class="disclaimer-btn decline">Decline</button>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .disclaimer-popup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      z-index: 10000;
+      backdrop-filter: blur(5px);
+    }
+
+    .disclaimer-popup.show {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: fadeIn 0.3s ease-out;
+    }
+
+    .disclaimer-content {
+      background: white;
+      border-radius: 15px;
+      max-width: 600px;
+      max-height: 80vh;
+      margin: 20px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      overflow: hidden;
+      animation: slideIn 0.3s ease-out;
+    }
+
+    .disclaimer-header {
+      background: linear-gradient(135deg, #2d2d2d, #1a1a1a);
+      color: white;
+      padding: 20px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .disclaimer-header h2 {
+      margin: 0;
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    .disclaimer-close {
+      font-size: 2rem;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .disclaimer-close:hover {
+      transform: scale(1.1);
+    }
+
+    .disclaimer-body {
+      padding: 25px;
+      max-height: 50vh;
+      overflow-y: auto;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    .disclaimer-body p {
+      margin-bottom: 15px;
+    }
+
+    .disclaimer-body strong {
+      color: #2d2d2d;
+      font-weight: 600;
+    }
+
+    .disclaimer-footer {
+      padding: 20px 25px;
+      background: #f8f9fa;
+      display: flex;
+      gap: 15px;
+      justify-content: flex-end;
+      border-top: 1px solid #e9ecef;
+    }
+
+    .disclaimer-btn {
+      padding: 12px 30px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .disclaimer-btn.accept {
+      background: linear-gradient(135deg, #28a745, #20c997);
+      color: white;
+    }
+
+    .disclaimer-btn.accept:hover {
+      background: linear-gradient(135deg, #218838, #1bb58a);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
+    }
+
+    .disclaimer-btn.decline {
+      background: linear-gradient(135deg, #dc3545, #e74c3c);
+      color: white;
+    }
+
+    .disclaimer-btn.decline:hover {
+      background: linear-gradient(135deg, #c82333, #d62c1a);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(220, 53, 69, 0.3);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideIn {
+      from { 
+        opacity: 0;
+        transform: translateY(-50px) scale(0.9);
+      }
+      to { 
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .disclaimer-content {
+        margin: 10px;
+        max-height: 90vh;
+      }
+
+      .disclaimer-header {
+        padding: 15px 20px;
+      }
+
+      .disclaimer-header h2 {
+        font-size: 1.3rem;
+      }
+
+      .disclaimer-body {
+        padding: 20px;
+        font-size: 0.9rem;
+        max-height: 60vh;
+      }
+
+      .disclaimer-footer {
+        padding: 15px 20px;
+        flex-direction: column;
+      }
+
+      .disclaimer-btn {
+        padding: 12px 20px;
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .disclaimer-content {
+        margin: 5px;
+      }
+
+      .disclaimer-header h2 {
+        font-size: 1.2rem;
+      }
+
+      .disclaimer-body {
+        font-size: 0.85rem;
+        padding: 15px;
+      }
+    }
+  </style>
+
+  <script>
+    // Disclaimer Popup Functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const disclaimerPopup = document.getElementById('disclaimerPopup');
+      const disclaimerClose = document.getElementById('disclaimerClose');
+      const disclaimerAccept = document.getElementById('disclaimerAccept');
+      const disclaimerDecline = document.getElementById('disclaimerDecline');
+
+      // Check if user has already accepted the disclaimer
+      const disclaimerAccepted = localStorage.getItem('disclaimerAccepted');
+      
+      if (!disclaimerAccepted) {
+        // Show popup after a short delay
+        setTimeout(() => {
+          disclaimerPopup.classList.add('show');
+          document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }, 1000);
+      }
+
+      // Accept button functionality
+      disclaimerAccept.addEventListener('click', function() {
+        localStorage.setItem('disclaimerAccepted', 'true');
+        closeDisclaimer();
+      });
+
+      // Decline button functionality
+      disclaimerDecline.addEventListener('click', function() {
+        if (confirm('If you decline these terms, you will be redirected away from this website. Are you sure?')) {
+          window.location.href = 'https://www.google.com';
+        }
+      });
+
+      // Close button functionality
+      disclaimerClose.addEventListener('click', function() {
+        closeDisclaimer();
+      });
+
+      // Close disclaimer function
+      function closeDisclaimer() {
+        disclaimerPopup.classList.remove('show');
+        document.body.style.overflow = 'auto'; // Restore scrolling
+        setTimeout(() => {
+          disclaimerPopup.style.display = 'none';
+        }, 300);
+      }
+
+      // Prevent closing by clicking outside (force user to make a choice)
+      disclaimerPopup.addEventListener('click', function(e) {
+        if (e.target === disclaimerPopup) {
+          // Do nothing - force user to click accept or decline
+        }
+      });
+    });
+  </script>
   
 </body>
 </html>

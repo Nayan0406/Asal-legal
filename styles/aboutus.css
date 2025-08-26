@@ -515,7 +515,7 @@ nav .nav-links li a:hover {
 
 .image-gallery {
   display: flex;
-  grid-template-columns: 1fr;
+  grid-template-columns: 3fr;
   gap: 20px;
   flex-wrap: nowrap;
   justify-content: center;
@@ -550,9 +550,9 @@ nav .nav-links li a:hover {
   border-radius: 8px;
 }
 
-.about-content {
-  padding: 20px;
-}
+/* .about-content {
+  padding: 0px;
+} */
 
 .abit-text {
   color: #2b6cb0;
@@ -573,6 +573,7 @@ nav .nav-links li a:hover {
   color: #4a5568;
   line-height: 1.6;
   margin-bottom: 30px;
+  text-align: justify;
 }
 
 /* Responsive Design */
@@ -750,6 +751,7 @@ nav .nav-links li a:hover {
     font-size: 14px;
     line-height: 1.4;
     margin-bottom: 20px;
+    text-align: justify;
   }
 
   .explore-btn {

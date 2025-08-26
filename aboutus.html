@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About us page</title>
-    <link rel="stylesheet" href="styles/aboutus.css">
-    <link rel="icon" type="image/png" href="images/logo.png" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About us page</title>
+  <link rel="stylesheet" href="styles/aboutus.css">
+  <link rel="icon" type="image/png" href="images/logo.png" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 </head>
 <style>
   .left-columns .horizontal-image {
@@ -16,13 +17,14 @@
     min-height: 80px;
     object-fit: cover;
   }
-  .team1-image,
-  .team2-image {
+
+  .team1-image {
     width: 180px;
     max-width: 100%;
     display: block;
     margin: 0 auto;
   }
+
   .team2-image {
     width: 200px;
     height: 140px;
@@ -35,7 +37,7 @@
     margin: 60px auto;
     padding: 0 20px;
   }
-  
+
   .cards-heading {
     text-align: center;
     font-size: 2.5rem;
@@ -44,18 +46,18 @@
     font-weight: 700;
     letter-spacing: 1px;
   }
-  
+
   .cards-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     justify-content: center;
   }
-  
+
   .card {
     background: #fff;
     border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     padding: 30px 20px;
     font-size: 1.2rem;
     color: #333;
@@ -63,8 +65,9 @@
     font-weight: 500;
     transition: all 0.3s ease;
     border: 1px solid #f0f0f0;
+    text-align: justify;
   }
-  
+
   /* .card:hover {
     box-shadow: 0 8px 25px rgba(0,0,0,0.15);
     transform: translateY(-5px);
@@ -76,60 +79,150 @@
       grid-template-columns: repeat(3, 1fr);
       gap: 18px;
     }
-    
+
     .card {
       padding: 25px 15px;
       font-size: 1.1rem;
     }
-    
+
     .cards-heading {
       font-size: 2rem;
     }
   }
-  
+
   @media (max-width: 768px) {
     .cards-container {
       grid-template-columns: repeat(2, 1fr);
       gap: 15px;
     }
-    
+
     .card {
       padding: 20px 15px;
       font-size: 1rem;
     }
-    
+
     .cards-heading {
       font-size: 1.8rem;
       margin-bottom: 30px;
     }
-    
+
     .cards-section {
       margin: 40px auto;
       padding: 0 15px;
     }
   }
-  
+
   @media (max-width: 480px) {
     .cards-container {
       grid-template-columns: 1fr;
       gap: 12px;
     }
-    
+
     .cards-heading {
       font-size: 1.5rem;
       margin-bottom: 25px;
     }
-    
+
     .card {
       padding: 18px 12px;
       font-size: 0.95rem;
+    }
+  }
+
+  /* About Swap Section Responsive Styles */
+  .about-swap-section {
+    max-width: 1200px;
+    margin: -10px auto;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 0 20px;
+    margin-bottom: 70px;
+  }
+
+  @media (max-width: 991px) {
+    .about-swap-section {
+      gap: 30px;
+      margin: 40px auto;
+    }
+    
+    .swap-description {
+      font-size: 1rem;
+    }
+    
+    .swap-image img {
+      max-width: 300px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .about-swap-section {
+      flex-direction: column;
+      gap: 30px;
+      text-align: center;
+      margin: 30px auto;
+      padding: 0 15px;
+    }
+    
+    .swap-description {
+      flex: none;
+      width: 100%;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    
+    .swap-image {
+      flex: none;
+      width: 100%;
+      gap: 15px;
+    }
+    
+    .swap-image img {
+      max-width: 280px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .about-swap-section {
+      gap: 20px;
+      margin: 20px auto;
+      padding: 0 10px;
+    }
+    
+    .swap-description {
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+    
+    .swap-image {
+      gap: 12px;
+    }
+    
+    .swap-image img {
+      max-width: 250px;
+    }
+  }
+
+  @media (max-width: 376px) {
+    .about-swap-section {
+      gap: 15px;
+      margin: 15px auto;
+      padding: 0 8px;
+    }
+    
+    .swap-description {
+      font-size: 0.85rem;
+    }
+    
+    .swap-image img {
+      max-width: 220px;
     }
   }
 </style>
 </head>
 <style>
   @media (max-width: 376px) {
-    h1.overlay-title { 
+    h1.overlay-title {
       padding-top: 12.5rem;
     }
 
@@ -146,16 +239,16 @@
     }
 
     nav .logo img {
-    margin-left: 80%;
+      margin-left: 80%;
+    }
   }
-  }
-   
+
   @media (max-width: 480px) {
     .vm-image {
       padding-right: 18px;
     }
   }
-  
+
   .vm-image {
     border-left: 4px solid #2d2d2d;
     border-radius: 18px 0 0 18px;
@@ -164,25 +257,32 @@
   /* Image Gallery Alignment - Same as Index.html */
   .image-gallery {
     display: flex;
+    flex-direction: row;
     gap: 20px;
-    margin-bottom: 40px;
+    /* margin-bottom: 40px; */
     justify-content: center;
     align-items: flex-start;
+    flex-wrap: nowrap;
+    padding-left: 50px;
   }
 
-  .left-columns, .right-columns {
+  .left-columns {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
     flex: 1;
+    padding-top: 50px;
   }
 
-  .team1-image, .team2-image, .horizontal-image, .stat-image {
+  .team1-image,
+  .team2-image,
+  .horizontal-image,
+  .stat-image {
     width: 100%;
-    max-width: 250px;
+    max-width: 350px;
     height: auto;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     margin-left: 10px;
     margin-right: 40px;
   }
@@ -196,8 +296,9 @@
       align-items: flex-start;
       padding: 0 10px;
     }
-    
-    .left-columns, .right-columns {
+
+    .left-columns,
+    .right-columns {
       gap: 10px;
       width: 48%;
       min-width: 45%;
@@ -205,8 +306,11 @@
       flex-direction: column;
       align-items: center;
     }
-    
-    .team1-image, .team2-image, .horizontal-image, .stat-image {
+
+    .team1-image,
+    .team2-image,
+    .horizontal-image,
+    .stat-image {
       max-width: 100%;
       width: 100%;
       margin-left: 0;
@@ -224,8 +328,9 @@
       align-items: flex-start;
       padding: 0 5px;
     }
-    
-    .left-columns, .right-columns {
+
+    .left-columns,
+    .right-columns {
       gap: 8px;
       width: 48%;
       min-width: 45%;
@@ -233,8 +338,11 @@
       flex-direction: column;
       align-items: center;
     }
-    
-    .team1-image, .team2-image, .horizontal-image, .stat-image {
+
+    .team1-image,
+    .team2-image,
+    .horizontal-image,
+    .stat-image {
       max-width: 100%;
       width: 100%;
       margin-left: 0;
@@ -243,117 +351,171 @@
     }
   }
 </style>
+
 <body>
 
   <header>
     <nav class="navbar">
-        <div class="logo">
-            <img src="images/WhatsApp_Image_2024-12-10_at_7.19.12_PM-removebg-preview 1 (1).png" alt="Logo">
-        </div>
-        <input type="checkbox" id="menu-checkbox" class="menu-checkbox">
-        <label for="menu-checkbox" class="menu-icon">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </label>
-        <ul class="nav-links">
-          <li><a href="index.html">HOME</a></li>
-          <li><a href="aboutus.html">ABOUT US</a></li>
-          <li><a href="service.html">SERVICES</a></li>
-          <li><a href="ourteam.html">OUR TEAM</a></li>
-          <li><a href="blog.html">BLOG</a></li>
-          <li><a href="contact.html">CONTACT</a></li>
-        </ul>       
-    </nav>
-      <div class="background">
-          <img src="images/background-img.png" alt="Background">
+      <div class="logo">
+        <img src="images/WhatsApp_Image_2024-12-10_at_7.19.12_PM-removebg-preview 1 (1).png" alt="Logo">
       </div>
-      <div class="overlay">
-          <div class="overlay-flex">
-            <div class="overlay-left">
-              <h1 class="overlay-title">About Us</h1>
-            </div>
-            <div class="overlay-divider"></div>
-            <div class="overlay-right">
-              <p class="overlay-quote">"We are a dedicated team of legal professionals committed to delivering high-quality, client-focused services."</p>
-              <p class="overlay-quote">With experience across diverse legal fields, we stand by your side with trust, integrity, and results."</p>
-            </div>
-          </div>
-      </div>  
-      
+      <input type="checkbox" id="menu-checkbox" class="menu-checkbox">
+      <label for="menu-checkbox" class="menu-icon">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </label>
+      <ul class="nav-links">
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="aboutus.html">ABOUT US</a></li>
+        <li><a href="service.html">SERVICES</a></li>
+        <li><a href="ourteam.html">OUR TEAM</a></li>
+        <li><a href="blog.html">BLOG</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+      </ul>
+    </nav>
+    <div class="background">
+      <img src="images/background-img.png" alt="Background">
+    </div>
+    <div class="overlay">
+      <div class="overlay-flex">
+        <div class="overlay-left">
+          <h1 class="overlay-title">About Us</h1>
+        </div>
+        <div class="overlay-divider"></div>
+        <div class="overlay-right">
+          <p class="overlay-quote">"We are a dedicated team of legal professionals committed to delivering high-quality,
+            client-focused services."</p>
+          <p class="overlay-quote">With experience across diverse legal fields, we stand by your side with trust,
+            integrity, and results."</p>
+        </div>
+      </div>
+    </div>
+
   </header>
 
-    <!-- About Section -->
-    <section class="about-section">
-        <div class="image-gallery">
-                <div class="left-columns">
-                    <img src="images/group-img-2.jpg" alt="Team Image 1" class="team1-image">
-                    <img src="images/group-img-3.jpg" alt="Horizontal Image" class="horizontal-image">
-                </div>
-                <div class="right-columns">
-                    <img src="images/group-img-3.jpg" alt="Success Rate" class="stat-image">
-                    <img src="images/group-img-2.jpg" alt="Team Image 2" class="team2-image">
-                </div>
-            </div>
+  <!-- About Section -->
+  <section class="about-section">
+    <div class="image-gallery">
+      <div class="left-columns">
+        <img src="images/group-img-2.jpg" alt="Team Image 1" class="team1-image">
+        <img src="images/group-img-3.jpg" alt="Horizontal Image" class="horizontal-image">
+        
+      </div>
+    </div>
 
-        <div class="about-content" id="about">
-            <p class="abit-text">A B I T</p>
-            <h2 class="about-title">ABOUT US</h2>
-            <p class="description">
-              Mr. Akash Kakade is the Founding Managing Partner of Asal Legal Solution LLP, a dynamic and rapidly expanding law firm established in 2011. Under his visionary leadership and hands-on guidance, the Firm has earned a formidable reputation for its strategic, research-driven approach to high-stakes litigation and advisory services, particularly at the Supreme Court of India. A practicing lawyer enrolled with the Bar Council of India and the Bar Council of Maharashtra and Goa, Mr. Kakade excels in Constitutional Law, Corporate Law, Criminal Law, Land Acquisition, Human Rights Law, and Alternative Dispute Resolution (ADR). His persuasive advocacy and meticulous research-oriented approach have led to several reported Constitution Bench Judgments and a series of landmark decisions at the Supreme Court, significantly shaping Indian jurisprudence.
+    <div class="about-content" id="about">
+      <p class="abit-text">A B I T</p>
+      <h2 class="about-title">ABOUT US</h2>
+      <p class="description">
+        Mr. Akash Kakade is the Founding Managing Partner of Asal Legal Solution LLP, a dynamic and rapidly expanding
+        law firm established in 2011. Under his visionary leadership and hands-on guidance, the Firm has earned a
+        formidable reputation for its strategic, research-driven approach to high-stakes litigation and advisory
+        services, particularly at the Supreme Court of India. A practicing lawyer enrolled with the Bar Council of India
+        and the Bar Council of Maharashtra and Goa, Mr. Kakade excels in Constitutional Law, Corporate Law, Criminal
+        Law, Land Acquisition, Human Rights Law, and Alternative Dispute Resolution (ADR). His persuasive advocacy and
+        meticulous research-oriented approach have led to several reported Constitution Bench Judgments and a series of
+        landmark decisions at the Supreme Court, significantly shaping Indian jurisprudence.
 
-Recognised for his adept handling of complex constitutional and commercial disputes, Mr. Kakade has been instrumental in landmark judgments, including multiple Constitution Bench decisions at the Supreme Court. He is an esteemed member of the Chartered Institute of Arbitrators, the International Bar Association, and the Supreme Court Bar Association, and serves as Alumni Ambassador and Mentor for Queen Mary University of London, where he earned his LL.M. in Commercial and Corporate Law.
+        Recognised for his adept handling of complex constitutional and commercial disputes, Mr. Kakade has been
+        instrumental in landmark judgments, including multiple Constitution Bench decisions at the Supreme Court.
+        He is
+        an esteemed member of the Chartered Institute of Arbitrators, the International Bar Association, and the Supreme
+        Court Bar Association, and serves as Alumni Ambassador and Mentor for Queen Mary University of London, where he
+        earned his LL.M. in Commercial and Corporate Law. 
+      </p>
+    </div>
+  </section>
 
-Mr. Kakade extensively practices in the areas of Constitutional Law, Commercial Litigation, International Commercial Arbitration, Intellectual Property, Corporate Advisory, Land Acquisition, Human Rights Law, and Alternative Dispute Resolution. He has participated in and assisted with several international arbitration proceedings, advising on matters involving cross-border transactions, energy sectors, and infrastructure projects.
+    <!-- New Section: Left Description, Right Image -->
+    <section class="about-swap-section">
+      <div class="swap-description" style="flex: 1; font-size: 1.1rem; color: #444; line-height: 1.7; text-align: justify;">
+        
+        <p>
+          
 
-In the course of representing clients before the Supreme Court and subordinate courts, Mr. Kakade regularly addresses intricate issues related to reservations, insolvency, admiralty laws, money laundering, land scams, elections, copyrights, and pensions. He provides comprehensive legal counsel to a global clientele, including corporations from India, Indonesia, Qatar, Singapore, Dubai, and beyond, on empanelment for entities such as state governments, universities, airlines, and energy firms.
+        Mr. Kakade extensively practices in the areas of Constitutional Law, Commercial Litigation, International
+        Commercial Arbitration, Intellectual Property, Corporate Advisory, Land Acquisition, Human Rights Law, and
+        Alternative Dispute Resolution. He has participated in and assisted with several international arbitration
+        proceedings, advising on matters involving cross-border transactions, energy sectors, and infrastructure
+        projects.
 
-He has advised on structuring international commercial deals, pre-arbitral interim reliefs, and compliance with Indian laws for foreign investments, while maintaining a positive, team-oriented approach to managing high-profile cases.
-            </p>
-        </div>
-    </section>
+        In the course of representing clients before the Supreme Court and subordinate courts, Mr. Kakade regularly
+        addresses intricate issues related to reservations, insolvency, admiralty laws, money laundering, land scams,
+        elections, copyrights, and pensions. He provides comprehensive legal counsel to a global clientele, including
+        corporations from India, Indonesia, Qatar, Singapore, Dubai, and beyond, on empanelment for entities such as
+        state governments, universities, airlines, and energy firms.
 
-     <!-- Cards Section -->
-    <section class="cards-section">
-      <h2 class="cards-heading">Representative Matters</h2>
-      <div class="cards-container">
-        <div class="card">Represented in the EWS Reservation Case before the Constitution Bench of the Supreme Court of India, addressing key issues of affirmative action and equality.</div>
-        <div class="card">Handled the ABG Shipyard Swiss Challenge Process Case at the Supreme Court, navigating insolvency and restructuring under the Insolvency and Bankruptcy Code.</div>
-        <div class="card">Advised in the Prevention of Money Laundering Act Validity Case before the Constitution Bench, challenging the constitutional validity of anti-money laundering provisions.</div>
-        <div class="card">Represented in the INS VIKRANT Auction Purchase Case at the Supreme Court, involving admiralty laws and the sale of naval assets.</div>
-        <div class="card">Represented Maratha Seva Sangh in the Maratha Reservation Case at the Supreme Court, dealing with caste-based reservations and exceeding the 50% quota cap.</div>
-        <div class="card">Represented clients in the KAALA movie copyright case involving actor Rajnikanth at the Supreme Court, resolving intellectual property infringement disputes in the entertainment industry.</div>
-        <div class="card">Represented LYCA Productions in a copyright infringement matter before the Supreme Court, protecting film rights and distribution agreements.</div>
-        <div class="card">Advised on the BHOODAN LANDS Scam Case at the Supreme Court, investigating fraudulent land allocations under charitable schemes.</div>
+        He has advised on structuring international commercial deals, pre-arbitral interim reliefs, and compliance with
+        Indian laws for foreign investments, while maintaining a positive, team-oriented approach to managing
+        high-profile cases.
+        </p>
+        
+      </div>
+      <div class="swap-image" style="flex: 1; display: flex; justify-content: center; align-items: center; flex-direction: column; gap: 20px;">
+        <img src="images/group-img-3.jpg" alt="Asal Legal Team" style="max-width: 350px; width: 100%; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.10);">
+        <img src="images/group-img-2.jpg" alt="Asal Legal Team" style="max-width: 350px; width: 100%; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.10);">
       </div>
     </section>
 
-    <!-- Vision Mission Section -->
-    <section class="vision-mission-section">
-        <div class="container">
-            <div class="row">
-              <img src="images/vision-img.jpg" alt="Vision" class="vm-image">
-                <div class="vm-content">
-                    <h2>Vision</h2>
-                    <p>
-                      Our vision is to set benchmarks in Supreme Court advocacy and redefine
-legal service delivery through innovation, expertise, and trust. We are committed to legal excellence through meticulous research, personalized strategies, and a client-centric approach that ensures confidentiality and transparency. Leveraging modern technology, we enhance case management for efficient dispute resolution. Specializing in complex legal matters, including financial crimes under the PMLA, we provide robust defense strategies and compliance advisory services.</p>
-                    </div>
-                    </div>
-            </div>
-            
-            <div class="row">
-              <img src="images/mission-img.jpg" alt="mission" class="vm-image">
-                <div class="vm-content">
-                    <h2>Mission</h2>
-                    <p>Our mission is to uphold the rule of law through ethical practices, protect client interests with client-focused solutions, and contribute to shaping equitable legal frameworks. We are dedicated to maintaining the highest standards of integrity, professionalism, and fairness in all legal proceedings. By prioritizing ethical advocacy, we ensure that our legal strategies not only serve our clients' best interests but also align with the broader principles of justice and social responsibility. Our client-centric approach involves understanding each client's unique needs.</p>
-            </div>
-          </div>
-        </div>
-    </section>
+  <!-- Cards Section -->
+  <section class="cards-section">
+    <h2 class="cards-heading">Representative Matters</h2>
+    <div class="cards-container">
+      <div class="card">Represented in the EWS Reservation Case before the Constitution Bench of the Supreme Court of
+        India, addressing key issues of affirmative action and equality.</div>
+      <div class="card">Handled the ABG Shipyard Swiss Challenge Process Case at the Supreme Court, navigating
+        insolvency and restructuring under the Insolvency and Bankruptcy Code.</div>
+      <div class="card">Advised in the Prevention of Money Laundering Act Validity Case before the Constitution Bench,
+        challenging the constitutional validity of anti-money laundering provisions.</div>
+      <div class="card">Represented in the INS VIKRANT Auction Purchase Case at the Supreme Court, involving admiralty
+        laws and the sale of naval assets.</div>
+      <div class="card">Represented Maratha Seva Sangh in the Maratha Reservation Case at the Supreme Court, dealing
+        with caste-based reservations and exceeding the 50% quota cap.</div>
+      <div class="card">Represented clients in the KAALA movie copyright case involving actor Rajnikanth at the Supreme
+        Court, resolving intellectual property infringement disputes in the entertainment industry.</div>
+      <div class="card">Represented LYCA Productions in a copyright infringement matter before the Supreme Court,
+        protecting film rights and distribution agreements.</div>
+      <div class="card">Advised on the BHOODAN LANDS Scam Case at the Supreme Court, investigating fraudulent land
+        allocations under charitable schemes.</div>
+    </div>
+  </section>
 
-   <!-- Footer Section -->
-   <div class="footer">
+  <!-- Vision Mission Section -->
+  <section class="vision-mission-section">
+    <div class="container">
+      <div class="row">
+        <img src="images/vision-img.jpg" alt="Vision" class="vm-image">
+        <div class="vm-content">
+          <h2>Vision</h2>
+          <p>
+            Our vision is to set benchmarks in Supreme Court advocacy and redefine
+            legal service delivery through innovation, expertise, and trust. We are committed to legal excellence
+            through meticulous research, personalized strategies, and a client-centric approach that ensures
+            confidentiality and transparency. Leveraging modern technology, we enhance case management for efficient
+            dispute resolution. Specializing in complex legal matters, including financial crimes under the PMLA, we
+            provide robust defense strategies and compliance advisory services.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <img src="images/mission-img.jpg" alt="mission" class="vm-image">
+      <div class="vm-content">
+        <h2>Mission</h2>
+        <p>Our mission is to uphold the rule of law through ethical practices, protect client interests with
+          client-focused solutions, and contribute to shaping equitable legal frameworks. We are dedicated to
+          maintaining the highest standards of integrity, professionalism, and fairness in all legal proceedings. By
+          prioritizing ethical advocacy, we ensure that our legal strategies not only serve our clients' best interests
+          but also align with the broader principles of justice and social responsibility. Our client-centric approach
+          involves understanding each client's unique needs.</p>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <div class="footer">
     <div class="footer-container">
       <div class="footer-section">
         <h3>NAVIGATION</h3>
@@ -364,7 +526,7 @@ legal service delivery through innovation, expertise, and trust. We are committe
           <li><a href="ourteam.html">Our Team</a></li>
           <li><a href="blog.html">Blog</a></li>
           <li><a href="contact.html">Contact</a></li>
-         
+
         </ul>
       </div>
       <div class="footer-section">
@@ -397,7 +559,7 @@ legal service delivery through innovation, expertise, and trust. We are committe
                 14, Kasturba Gandhi Marg,<br>
                 Connaught Place,<br>
                 New Delhi - 110 001 <br>
-                 
+
               </p>
             </div>
           </li>
@@ -414,8 +576,7 @@ legal service delivery through innovation, expertise, and trust. We are committe
             <div class="info">
               <h4>General Enquiries</h4>
               <p>
-                <a href="office@akashkakade.org"
-                  >office@akashkakade.org</a>
+                <a href="office@akashkakade.org">office@akashkakade.org</a>
               </p>
             </div>
           </li>
@@ -425,23 +586,22 @@ legal service delivery through innovation, expertise, and trust. We are committe
 
     <div class="footer-bottom">
       <div class="footer-logo">
-        <img
-          src="images/WhatsApp Image 2024-12-10 at 7.19.12 PM 1 (1).png"
-          alt="ASAL Solutions Logo"
-        />
+        <img src="images/WhatsApp Image 2024-12-10 at 7.19.12 PM 1 (1).png" alt="ASAL Solutions Logo" />
       </div>
       <p>
-          Copyright © 2025 Asal Legal Solution LLP OR Akash Kakade. All Right Reserved | Powered by Asal Legal Solution LLP OR Akash Kakade
+        Copyright © 2025 Asal Legal Solution LLP OR Akash Kakade. All Right Reserved | Powered by Asal Legal Solution
+        LLP OR Akash Kakade
 
-          <!-- <a href="https://tars.co.in/">TARS TECHNOLOGIES</a> -->
-        </p>
+        <!-- <a href="https://tars.co.in/">TARS TECHNOLOGIES</a> -->
+      </p>
       <div class="social-icons">
         <a href="#"><i class="fab fa-facebook-f"></i></a>
         <a href="#"><i class="fab fa-twitter"></i></a>
         <a href="https://www.linkedin.com/company/asal-legal-solution-llp/"><i class="fab fa-linkedin-in"></i></a>
       </div>
-      </div>   
     </div>
   </div>
+  </div>
 </body>
+
 </html>
